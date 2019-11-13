@@ -27,12 +27,12 @@ console.log(isTruthy({nome: "Ricardo"})) ;
 console.log('-------------------') ;
 
 var carro = {
-    marca: "",
-    modelo: "",
-    placa: "",
-    ano: 0,
-    cor: "",
-    quantasPortas: 0,
+    marca: "Ford",
+    modelo: "Fusion",
+    placa: "ASE-3456",
+    ano: 2010,
+    cor: "Prata",
+    quantasPortas: 4,
     assentos: 5,
     quantidadePessoas: 0
 } ;
@@ -81,3 +81,72 @@ carro.obterMarcaModelo = function() {
 }
 
 console.log(carro.obterMarcaModelo()) ;
+
+console.log('-------------------') ;
+
+carro.addPessoas = function(arg) {
+    var result ;
+    var qdePessoas = carro.quantidadePessoas + arg ;
+
+    if (carro.quantidadePessoas === carro.assentos && qdePessoas >= carro.assentos) {
+        result = "O carro já está lotado!" ;
+
+    } else if (qdePessoas > carro.assentos) {
+        var qdeLugaresFaltantes = carro.assentos - carro.quantidadePessoas ;
+        result = `Só ${qdeLugaresFaltantes == 1 ? "cabe" : "cabem"} mais ${qdeLugaresFaltantes} ${qdeLugaresFaltantes === 1 ? "pessoa" : "pessoas"}!` ;
+
+    } else {
+        carro.quantidadePessoas = qdePessoas ;
+        result = `Já temos ${carro.quantidadePessoas} no carro!` ;    
+    }
+    return result ;
+}
+
+console.log('-------------------') ;
+
+console.log(carro.addPessoas(1)) ;
+console.log(carro.addPessoas(1)) ;
+console.log(carro.addPessoas(6)) ;
+
+console.log('-------------------') ;
+
+carro.obterCor()
+
+console.log('-------------------') ;
+
+carro.mudarCor("vermelho") ;
+
+console.log('-------------------') ;
+
+carro.obterCor() // retorn é "Vermelho"
+
+console.log('-------------------') ;
+
+carro.mudarCor("verde musgo") ; // carro.cor: verde musgo 
+
+console.log('-------------------') ;
+
+console.log(carro.obterMarcaModelo()) ;
+
+console.log('-------------------') ;
+
+carro.quantidadePessoas = 0 ;
+console.log(carro.addPessoas(2)) ;
+
+console.log('-------------------') ;
+
+console.log(carro.addPessoas(4)) ;
+
+console.log('-------------------') ;
+
+console.log(carro.addPessoas(3)) ;
+
+console.log('-------------------') ;
+
+console.log(carro.addPessoas(-10)) ;
+console.log(carro.addPessoas(5)) ;
+console.log('-------------------') ;
+
+console.log('-------------------') ;
+console.log('-------------------') ;
+console.log(carro) ;
