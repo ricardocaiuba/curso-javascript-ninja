@@ -172,5 +172,4 @@ carro.addPessoas(-4) ; // Já temos 1 no carro!
 carro.addPessoas(-4) ; // Só cabem mais 4 pessoas! 
 
 // Quantas pessoas temos no carro?
-?
 carro.quantidadePessoas ; // 1 
