@@ -100,7 +100,7 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
 */
 function showTeamPosition(posicao) {
     var result ;
-    if (posicao > 5) {
+    if (posicao < 1 || posicao > 5) {
         result = `Não temos a informação do time que está nessa posição. Posição: ${posicao}`  ;
     } else {
         result = `O time que está em ${posicao}º lugar é o ${teams[posicao - 1]}.` ;
