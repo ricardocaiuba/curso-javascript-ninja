@@ -1,3 +1,19 @@
+// Exemplos em aula:
+// Operador vírgula
+var a, b = 2, c ;
+
+function myFunction() {
+    var x = 0 ;
+    return (x+= 1, x) ; // atribui 1 para x e depois retorna x
+}
+
+
+
+
+
+
+
+
 /*
 Vamos falar um pouco sobre "Futebol". Escolha um campeonato estadual qualquer
 para começar o desafio.
