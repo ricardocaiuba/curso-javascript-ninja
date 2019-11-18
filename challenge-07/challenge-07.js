@@ -12,12 +12,85 @@ while (numerosPares <= 20) {
     numerosPares++ ;
 }
 
-console.log("----------------[  Operador de módulo %  ]-------------------") ;
+console.log("----------------[  Arrays (length)  ]-------------------") ;
+var arr = [
+    "Rodrigues",
+    null,
+    true,
+    {
+        bola: "azul"
+    },
+    function() {
 
+    }
+] ;
+console.log(arr.length) ;
+console.log("-") ;
+
+var qdeItens = arr.length ;
+while (qdeItens >= 0) {
+    console.log(arr[qdeItens - 1]) ;
+    qdeItens-- ;
+}
+
+console.log("-") ;
+
+var qdeItens = arr.length ;
+while (qdeItens > 0) {
+    console.log(arr[qdeItens - 1]) ;
+    qdeItens-- ;
+    if (qdeItens === 3) {
+        console.log(arr[qdeItens].bola) ;
+    }
+}
+
+console.log("----------------[  Método push  ]-------------------") ;
+var arr = [
+    1,
+    2,
+    3, 
+    "Rodrigues",
+    {
+        bola: "azul"
+    }
+] ;
+console.log(arr) ;
+console.log(arr.length) ;
+for (var i = 0 ; i < arr.length ; i++ ) {
+    console.log(arr[i].bola) ;
+}
+
+console.log("Add item ao array:") ;
+arr.push(["la", "la2", "la3"]) ;
+
+arr.push({
+    carro: "BMW"
+}) ;
+console.log(arr) ;
+console.log(arr.length) ;
+
+arr.push(function soma(arg1, arg2) {
+    return arg1 + arg2 ;
+}) ;
+console.log(arr) ;
+const functionSoma = 7 ;
+console.log(arr[functionSoma](1, 5)) ;
+arr.push(null) ;
+arr.push([
+    "a",
+    "b",
+    "c",
+    {
+        firstName: "Ricardo",
+        lastName: "Rodrigues",
+        age: 43
+    }
+]) ;
+console.log(arr) ;
 /*
 Crie um array com 5 items (tipos variados).
 */
-// ?
+
 
 /*
 Crie uma função chamada `addItem`, que irá adicionar itens no array criado.
