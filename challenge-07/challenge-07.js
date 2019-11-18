@@ -1,3 +1,19 @@
+console.log("----------------[  Operador de módulo %  ]-------------------") ;
+console.log("3 / 3 => ", 3 / 3) ;
+console.log("3 % 3 => ", 3 % 3) ;
+console.log("5 / 2 => ", 5 / 2) ;
+console.log("5 % 2 => ", 5 % 2) ;
+
+var numerosPares = 0
+while (numerosPares <= 20) {
+    if ((numerosPares % 2) === 0) {
+        console.log("=>", numerosPares) ;
+    }
+    numerosPares++ ;
+}
+
+console.log("----------------[  Operador de módulo %  ]-------------------") ;
+
 /*
 Crie um array com 5 items (tipos variados).
 */
