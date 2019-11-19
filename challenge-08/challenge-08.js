@@ -1,4 +1,104 @@
 console.log("----------------[  nomear funções  ]-------------------");
+var func = function func() {
+    return "hi" ;
+} ;
+
+console.log(func()) ;
+console.log(func) ;
+console.log(func.name) ;
+
+function myFunction2() {
+    return "function 2" ;
+}
+console.log(myFunction2()) ;
+console.log(myFunction2) ;
+console.log(myFunction2.name) ;
+
+console.log("----------------[  Functional Programming  ]-------------------");
+// Objetos de primeira classe
+// {} <3 function() {}
+// Como vc usa objetos literais
+var car = {
+    brand: "Chevrolet",
+    model: "Silverado"
+} ;
+
+// Você pode criar funções literais!
+function sum(arg1, arg2) {
+    return arg1 + arg2 ;
+}
+
+// Como você atribui objetos à variáveis
+var obj = {} ;
+
+// Cocê pode atribuir funções:
+var func = function func() {} ;
+
+// Como você retorna objetos em uma função:
+function person() {
+    return ({
+        name: "Ricardo",
+        lastName: "Rodrigues"
+    }) ;
+}
+console.log(person()) ;
+console.log(person().name) ;
+console.log(person().lastName) ;
+
+function person2() {
+    var info = {
+        name: "Ricardo",
+        lastName: "Rodrigues"
+    }
+    return info ;
+}
+
+console.log(person2()) ;
+
+console.log("----------------[  Functional Programming - Parte 2  ]-------------------");
+
+function adder(x) {
+    return function(y) {
+        return x + y ;
+    } ;
+}
+
+function adder(x) {
+    function addOther(y) {
+        return x + y ;
+    }
+    return addOther ;
+}
+
+
+var add2 = adder(2) ;
+console.log(add2) ;
+console.log(add2(3)) ;
+console.log(adder(5)(8)) ;
+
+console.log("----------------[  Objetos com parâmetros  ]-------------------");
+
+var car = {
+    color: "gray" 
+}
+function getCarColor(myCar) {
+    return myCar.color ;
+}
+console.log(getCarColor(car)) ;
+
+function showOtherFunction(func) {
+    return func() ;
+}
+
+function toReturnMyFullName() {
+    return "Ricardo Rodrigues dos Santos" ;
+} 
+console.log(showOtherFunction(function() {
+    return "Functional JS Ninja!" ;
+})) ;
+
+console.log(showOtherFunction(toReturnMyFullName)) ;
+
 
 /*
 Declare uma variável chamada `sum` e atribua a ela uma função chamada
