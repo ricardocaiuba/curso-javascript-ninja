@@ -1,13 +1,30 @@
 console.log("----------------[  Escopo de funções  ]-------------------");
-function myFunction() {
+function myFunctionClass() {
     function sum() {
-        return 1 + 2;
+        return number1 + number2;
     }
-    return sum();
+    var number1 = 1;
+    var number2 = 2
+    return sum(); 
 }
-console.log(myFunction());
+console.log(myFunctionClass());
 
+console.log("----------------[  Hoisting  ]-------------------");
 
+function myFunctionClass2() {
+    var number1 = 6;
+    var number2 = 2
+
+    return sum(); 
+    
+    function sum() {
+        return number1 + number2;
+    }
+}
+
+console.log(myFunctionClass2());
+
+console.log("----------------[  FIM  ]-------------------");
 /*
 Crie uma IIFE que envolva todo o código desse arquivo. Faça também a
 indentação correta do código, para ficar dentro da IIFE.
