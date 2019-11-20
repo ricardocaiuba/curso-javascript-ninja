@@ -24,6 +24,67 @@ function myFunctionClass2() {
 
 console.log(myFunctionClass2());
 
+console.log("-");
+// Isso não é possível 
+/*
+function myFunctionClass3() {
+    var number1 = 6;
+    var number2 = 2
+
+    return sum(); 
+    
+    var sum = function sum() {
+        return number1 + number2;
+    }
+}
+console.log(myFunctionClass3());
+*/
+console.log("-");
+
+function myFunctionOtherExample() {
+    console.log("Antes de declarar -> ", number1) ;
+    var number1 = 10 ;
+    console.log("Depois de declarar -> ", number1) ;
+}
+
+console.log(myFunctionOtherExample()) ;
+
+console.log("----------------[  IIFE (Função auto executável) ]-------------------");
+
+function sum1() {
+    return 1 + 2 ;
+}
+console.log(sum1()) ;
+
+var sum2 = function() {
+    return 3 + 2 ;
+} ;
+console.log(sum2()) ;
+
+var sum3 = function otherSum() {
+    return 5 + 8 ;
+} ;
+
+console.log(sum3()) ;
+
+var sum4 = () => {
+    return 10 + 45 ;
+} ;
+
+console.log(sum4()) ;
+
+console.log("-");
+
+(function() {
+    console.log(1 + 2) ;
+})() ;
+
+console.log("-");
+
+
+
+
+
 console.log("----------------[  FIM  ]-------------------");
 /*
 Crie uma IIFE que envolva todo o código desse arquivo. Faça também a
