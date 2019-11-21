@@ -1,4 +1,37 @@
-console.log("----------------[  Começo  ]-------------------");
+console.log("----------------[  do / while  ]-------------------");
+var counter = 1;
+while (counter < 10) {
+    console.log(counter++);
+}
+console.log("Caounter não é menor que 10:", counter);
+
+console.log("-");
+
+counter = 1;
+do {
+    console.log(counter++);
+} while (counter < 10);
+
+console.log("----------------[  for in  ]-------------------");
+
+var car = {
+    brand: "VW",
+    model: "Gol",
+    year: 2013
+};
+
+for (var prop in car) {
+    console.log(prop, car[prop]);
+}
+console.log(car);
+
+console.log("-");
+
+console.log("brand in car?", "brand" in car);
+console.log("brand in doors?", "doors" in car);
+
+console.log("----------------[  Saltos  ]-------------------");
+
 // Envolva todo o código desse arquivo em uma IIFE (incluindo esse comentário).
 
 /*
@@ -42,7 +75,7 @@ Faça um loop de 0 a 20, que adicione cada número como um item de um
 array chamado `numbers`. Se o contador for maior que 10, saia do loop.
 Mostre no console os números no array.
 */
-console.log( 'De 0 a 10:' );
+console.log('De 0 a 10:');
 // ?
 
 /*
@@ -51,5 +84,5 @@ criado acima, só precisa ser reiniciado) números de 0 a 20, inclusive
 esses. Se o número for ímpar, pular para o próximo número.
 Mostrar no console os números do array.
 */
-console.log( 'Pares de 0 a 20:' );
+console.log('Pares de 0 a 20:');
 // ?
