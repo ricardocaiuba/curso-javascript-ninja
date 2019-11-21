@@ -32,57 +32,162 @@ console.log("brand in doors?", "doors" in car);
 
 console.log("----------------[  Saltos  ]-------------------");
 
-// Envolva todo o código desse arquivo em uma IIFE (incluindo esse comentário).
+// return é um tipo de salto
 
-/*
-Crie uma variável chamada `once`, que recebe `false` como seu valor.
-Crie um loop que execute enquanto essa variável for verdadeira. Dentro do
-loop, mostre no console a mensagem:
-'Entrou ao menos uma vez!'
-Qual loop você deve usar para que essa mensagem seja mostrada no console?
-*/
-// ?
+function myFunction(arg) {
+    if (arg === 10) {
+        return true ;
+    }
+    var nome = "Ricardo Rodrigues" ;
+    return `${nome} -> ${arg}!` ;
+}
 
-/*
-Crie um objeto chamado `person`, que receba as seguintes propriedades:
-- 'name', 'age', 'weight' e 'birthday'. Preencha com os valores corretos
-para o nome, idade, peso e data de nascimento dessa pessoa.
-*/
-// ?
+console.log(myFunction(5)) ;
+console.log(myFunction(10)) ;
 
-/*
-Use um loop para percorrer o objeto criado acima, mostrando no console
-a frase:
-'The [PROPERTY] of person is [VALUE]'
-Aproveite e crie uma variável `counter` que vai contar quantas propriedades
-esse objeto tem.
-Após o loop, mostre a frase:
-'The person has [COUNTER] properties'
-*/
-// ?
+console.log("-");
+// break
+var number = 10 ;
+switch (number) {
+    case 1:
+        console.log("1") ;
+        break;
+    case 2:
+        console.log("2") ;
+        break;
+    case 10:
+        console.log("10") ;
+        break;
+        
+    default:
+        console.log("Default") ;
+}
+console.log("fim do switch") ;
 
-/*
-Crie uma função chamada `moreThan`, que vai verificar se a pessoa (objeto
-criado acima) é mais velha que a idade passada por parâmetro.
-Se verdadeiro, retornar `true`. Senão, retornar false.
-Após a função, mostrar a mensagem no console:
-'The person has more than 25 years old? [TRUE/FALSE]'
-*/
-// ?
+console.log("-");
+// breack com for
+for (var i = 0 ; i < 10 ; i++) {
+    if (i === 5) {
+        break ;
+    }
+    console.log(i) ;
+}
+console.log("Fim do for") ;
 
-/*
-Faça um loop de 0 a 20, que adicione cada número como um item de um
-array chamado `numbers`. Se o contador for maior que 10, saia do loop.
-Mostre no console os números no array.
-*/
-console.log('De 0 a 10:');
-// ?
+console.log("-");
+// com array
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] ;
+for (var i = 0 ;  i < arr.length ; i++) {
+    if (i === 5) {
+        break ;
+    }
+    console.log(i) ;
+}
+console.log("Fim do for com array") ;
 
-/*
-Faça outro loop de 0 a 20, que adicione a um array chamado `numbers` (já
-criado acima, só precisa ser reiniciado) números de 0 a 20, inclusive
-esses. Se o número for ímpar, pular para o próximo número.
-Mostrar no console os números do array.
-*/
-console.log('Pares de 0 a 20:');
-// ?
+console.log("-");
+// continue
+
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] ;
+for (var i = 0 ;  i < arr.length ; i++) {
+    if (i === 5) {
+        continue ;
+    }
+    console.log("continue ->", i) ;
+}
+console.log("Fim do for com continue") ;
+
+(function() {
+    // Envolva todo o código desse arquivo em uma IIFE (incluindo esse comentário).
+
+    /*
+    Crie uma variável chamada `once`, que recebe `false` como seu valor.
+    Crie um loop que execute enquanto essa variável for verdadeira. Dentro do
+    loop, mostre no console a mensagem:
+    'Entrou ao menos uma vez!'
+    Qual loop você deve usar para que essa mensagem seja mostrada no console?
+    */
+   console.log("----------------[  Exercicio 1  ]-------------------");
+    var once = false ;
+    do {
+        console.log("Entrou ao menos uma vez!") ;
+    } while (once) ;
+
+    /*
+    Crie um objeto chamado `person`, que receba as seguintes propriedades:
+    - 'name', 'age', 'weight' e 'birthday'. Preencha com os valores corretos
+    para o nome, idade, peso e data de nascimento dessa pessoa.
+    */
+   console.log("----------------[  Exercicio 1  ]-------------------");
+    var person = {
+        name: "Ricardo Rodrigues",
+        age: 43,
+        weight: 1.70,
+        birthday: new Date(1976, 1, 10)
+    }
+    console.log(person) ;
+
+    /*
+    Use um loop para percorrer o objeto criado acima, mostrando no console
+    a frase:
+    'The [PROPERTY] of person is [VALUE]'
+    Aproveite e crie uma variável `counter` que vai contar quantas propriedades
+    esse objeto tem.
+    Após o loop, mostre a frase:
+    'The person has [COUNTER] properties'
+    */
+    console.log("----------------[  Exercicio 3  ]-------------------");
+    var counter = 0 ;
+    for (prop in person) {
+        console.log(`The ${prop} of person is ${person[prop]}`) ;
+        counter++ ;
+    }
+    console.log(`The person has ${counter} properties`) ;
+    
+    /*
+    Crie uma função chamada `moreThan`, que vai verificar se a pessoa (objeto
+    criado acima) é mais velha que a idade passada por parâmetro.
+    Se verdadeiro, retornar `true`. Senão, retornar false.
+    Após a função, mostrar a mensagem no console:
+    'The person has more than 25 years old? [TRUE/FALSE]'
+    */
+    console.log("----------------[  Exercicio 4  ]-------------------");
+    function moreThan(argAge) {
+        return person.age > argAge ;
+    }
+    var age = 50 ;
+    console.log(`The person has more than ${age} years old? ${moreThan(age)}`) ;
+
+    /*
+    Faça um loop de 0 a 20, que adicione cada número como um item de um
+    array chamado `numbers`. Se o contador for maior que 10, saia do loop.
+    Mostre no console os números no array.
+    */
+    console.log("----------------[  Exercicio 5  ]-------------------");
+    console.log('De 0 a 10:');
+    var numbers = [] ;
+    for (var i = 0 ; i < 20 ; i++) {
+        if (i > 10) {
+            break ;
+        }
+        numbers.push(i) 
+    }
+    console.log(numbers) ;
+
+    /*
+    Faça outro loop de 0 a 20, que adicione a um array chamado `numbers` (já
+    criado acima, só precisa ser reiniciado) números de 0 a 20, inclusive
+    esses. Se o número for ímpar, pular para o próximo número.
+    Mostrar no console os números do array.
+    */
+    console.log("----------------[  Exercicio 6  ]-------------------");
+    console.log('Pares de 0 a 20:');
+    var numbers = [] ;
+    for (var i = 0 ; i <= 20 ; i++) {
+        if (i % 2 !== 0) {
+            continue ;
+        }
+        numbers.push(i) 
+    }
+    console.log(numbers) ;
+})() ;
