@@ -32,6 +32,70 @@ console.log("brand in doors?", "doors" in car);
 
 console.log("----------------[  Saltos  ]-------------------");
 
+// return é um tipo de salto
+
+function myFunction(arg) {
+    if (arg === 10) {
+        return true ;
+    }
+    var nome = "Ricardo Rodrigues" ;
+    return `${nome} -> ${arg}!` ;
+}
+
+console.log(myFunction(5)) ;
+console.log(myFunction(10)) ;
+
+console.log("-");
+// break
+var number = 10 ;
+switch (number) {
+    case 1:
+        console.log("1") ;
+        break;
+    case 2:
+        console.log("2") ;
+        break;
+    case 10:
+        console.log("10") ;
+        break;
+        
+    default:
+        console.log("Default") ;
+}
+console.log("fim do switch") ;
+
+console.log("-");
+// breack com for
+for (var i = 0 ; i < 10 ; i++) {
+    if (i === 5) {
+        break ;
+    }
+    console.log(i) ;
+}
+console.log("Fim do for") ;
+
+console.log("-");
+// com array
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] ;
+for (var i = 0 ;  i < arr.length ; i++) {
+    if (i === 5) {
+        break ;
+    }
+    console.log(i) ;
+}
+console.log("Fim do for com array") ;
+
+console.log("-");
+// continue
+
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] ;
+for (var i = 0 ;  i < arr.length ; i++) {
+    if (i === 5) {
+        continue ;
+    }
+    console.log("continue ->", i) ;
+}
+console.log("Fim do for com continue") ;
 
 // Envolva todo o código desse arquivo em uma IIFE (incluindo esse comentário).
 
