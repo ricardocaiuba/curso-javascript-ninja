@@ -67,9 +67,150 @@ console.log("otherObj2.x = 2", otherObj2.x);
 console.log("otherObj2.x", otherObj2.x);;
 console.log("otherObj1.x", otherObj1.x);;
 console.log(otherObj1 === otherObj2);
+// O objeto pai não muda o valor, mas se mudar o valor do pai, muda do filho.
+var objEmpty = Object.create({}) ;
+console.log(objEmpty) ;
+console.log(objEmpty.toString()) ;
+console.log("-")
+var obj5 = {}
+console.log("LIteral: ", obj5.toString()) ;
+obj5.x = 1;
+obj5.y = 2 ;
+console.log("Atribuindo Parametros: ", obj5) ;
+var obj6 = {}
+console.log("obj6:", obj6) ;
+obj6 = Object.create(obj5) ;
+console.log("obj6:", obj6.x) ;
+console.log("-")
+var obj7 = Object.create(obj6) ;
+console.log("obj7.x:", obj7.x) ;
+console.log("-")
+console.log("obj5.x:", obj5.x) ;
+console.log("obj6.x:", obj6.x) ;
+console.log("obj7.x:", obj7.x) ;
+console.log("-")
+obj6.x = 10 ;
+console.log("obj5.x:", obj5.x) ;
+console.log("obj6.x:", obj6.x) ;
+console.log("obj7.x:", obj7.x) ;
+console.log("-")
+console.log(obj5) ;
+console.log(obj6) ;
+console.log(obj7) ;
+// Acessando propriedades
+console.log("-") ;
+for (var prop in obj5) {
+    console.log(prop) ;
+}
+console.log("-") ;
+for (var prop in obj6) {
+    console.log(prop) ;
+}
+console.log("-") ;
+for (var prop in obj7) {
+    console.log(prop) ;
+}
 
+console.log("-") ;
 
+for (var prop in obj5) {
+    console.log(obj5.hasOwnProperty(prop) ? prop : "not found") ;
+}
+console.log("-") ;
+for (var prop in obj6) {
+    console.log(obj6.hasOwnProperty(prop) ? prop : "not found") ;
+}
+console.log("-") ;
+for (var prop in obj7) {
+    console.log(obj7.hasOwnProperty(prop) ? prop : "not found") ;
+}
 
+console.log("----------------[  Mais formas de criar objetos  ]-------------------");
+console.log("Object.keys") ;
+console.log(Object.keys(obj5)) ;  
+console.log(Object.keys(obj6)) ;  
+console.log(Object.keys(obj7)) ;  
+console.log("-") ;
+console.log("Object.keys(obj5).length:", Object.keys(obj5).length) ;
+console.log("Object.keys(obj6).length:", Object.keys(obj6).length) ;
+console.log("Object.keys(obj7).length:", Object.keys(obj7).length) ;
+
+console.log("--- [  Object.isPrototypeOf  ] ---") ;
+console.log("obj5.isPrototypeOf(obj6)", obj5.isPrototypeOf(obj6)) ;
+console.log("obj5.isPrototypeOf(obj7)", obj5.isPrototypeOf(obj7)) ;
+console.log("obj6.isPrototypeOf(obj7)", obj6.isPrototypeOf(obj7)) ;
+console.log("-") ;
+console.log("obj7.isPrototypeOf(obj5)", obj7.isPrototypeOf(obj5)) ;
+console.log("obj6.isPrototypeOf(obj5)", obj6.isPrototypeOf(obj5)) ;
+console.log("obj7.isPrototypeOf(obj6)", obj7.isPrototypeOf(obj6)) ;
+var obj8 = Object.create(obj7) ;
+console.log("obj7.isPrototypeOf(obj8)", obj7.isPrototypeOf(obj8)) ;
+
+console.log("--- [  JSON.stringify(obj)  ] ---") ;
+console.log("", JSON.stringify(obj)) ;
+console.log("", JSON.stringify(obj8)) ;
+console.log("", JSON.stringify(obj5)) ;
+var str = JSON.stringify(obj) ;
+console.log("-") ;
+console.log(str) ;
+console.log(JSON.parse(str)) ;
+
+console.log("--- [  Arrays  ] ---") ;
+// Adicionar itens no array
+var arr = [] ;
+console.log("arr: ", arr) ;
+arr[0] = 10 ;
+console.log("arr: ", arr) ;
+arr[1] = 5 ;
+console.log("arr: ", arr) ;
+arr[2] = 8 ;
+console.log("arr: ", arr) ;
+arr[3] = "nome"
+console.log("arr: ", arr) ;
+arr[12] = "doze" ;
+console.log("arr: ", arr) ;
+console.log("arr[4]: ", arr[4]) ;
+arr.push([1, 2, 3]) ;
+console.log("arr: ", arr) ;
+
+console.log("-") ;
+// remover ultimos itens do array
+console.log("arr: ", arr) ;
+arr.pop() ;
+console.log("After remove arr: ", arr) ;
+
+console.log("-") ;
+var newArr = [] ;
+newArr.push("arroz") ;
+newArr.push("feijão") ;
+newArr.push("macarrão") ;
+console.log("newArr: ", newArr) ;
+var last = newArr.pop() ;
+console.log("newArr: ", newArr) ;
+console.log("last: ", last) ;
+console.log(newArr.push("lazanha")) ;
+console.log("newArr: ", newArr) ;
+
+console.log("--- [  ARRAYS -> Método Join  ] ---") ;
+console.log(newArr) ;
+console.log("newArr.join('|'):", newArr.join(", ")) ;
+console.log(`Meu almoço hoje será ${newArr.join(", ")}`) ;
+
+console.log("--- [  ARRAYS -> Método reverse  ] ---") ;
+
+console.log(newArr) ;
+newArr.reverse() ;
+console.log(newArr) ;
+
+console.log("--- [  ARRAYS -> Método sort  ] ---") ;
+console.log(newArr) ;
+newArr.sort() ;
+console.log(newArr) ;
+newArr.push("ervilhas") ;
+console.log(newArr) ;
+newArr.sort() ;
+console.log(newArr) ;
+console.log("--------------------------------------------------");
 
 (function () {
     /*
