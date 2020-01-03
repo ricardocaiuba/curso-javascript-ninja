@@ -18,38 +18,108 @@ console.log(arr.push(7));
 console.log(arr);
 console.log(arr.concat([7, 8, 9, 10]));
 
-console.log("----------------[  ARRAYS - Concat  ]-------------------");
+console.log("----------------[  ARRAYS - unshift  ]-------------------");
+console.log(arr);
+console.log(arr.unshift("R"));
+console.log(arr);
+
+console.log("----------------[  ARRAYS - shift  ]-------------------");
+console.log(arr);
+console.log("push: ", arr.push(4));
+console.log(arr);
+console.log("pop: ", arr.pop());
+console.log(arr);
+console.log("unshift: ", arr.unshift(90));
+console.log(arr);
+console.log("shift: ", arr.shift());
+console.log(arr);
+
+console.log("----------------[  ARRAYS - slice  ]-------------------");
+var arr = [1, 2, 3, 4, 5];
+console.log(arr);
+console.log("slice(1): ", arr.slice(1));
+console.log("slice(0): ", arr.slice(0));
+console.log("slice(0, 2): ", arr.slice(1, 4));
+
+console.log("----------------[  ARRAYS - splice  ]-------------------");
+arr = [1, 2, 3, 4, 5];
+console.log(arr);
+console.log("splice(3): ", arr.splice(3));
+console.log(arr);
+arr = [1, 2, 3, 4, 5, 6, 7];
+console.log("splice(1, 3): ", arr.splice(1, 3));
+console.log(arr);
+console.log("splice(1, 0, 'a', 'b', 'c'): ", arr.splice(1, 0, "a", "b", "c"));
+console.log(arr);
+console.log("splice(1, 4, 2, 3, 4): ", arr.splice(1, 4, 2, 3, 4));
+console.log("splice(3, 2, 4, 5): ", arr.splice(3, 2, 4, 5));
+console.log("splice(5, 0, 6): ", arr.splice(5, 0, 6));
+console.log(arr);
+
+console.log("----------------[  ARRAYS - forEach  ]-------------------");
+arr = [1, 2, 3, 4, 5, 6, 7];
+arr.forEach(function(item, index, array) {
+  console.log(item, index, array);
+});
+arr.forEach(function(item, index) {
+  console.log(item, index);
+});
+var sum = 0;
+arr.forEach(function(item) {
+  sum += item;
+});
+console.log(sum);
+
+console.log("----------------[  ARRAYS - every  ]-------------------");
+arr = [1, 2, 3, 4, 5, 6, 7];
+var every = arr.every(function(item) {
+  return item < 5;
+});
+console.log(every);
+
+console.log("----------------[  ARRAYS - some  ]-------------------");
+arr = [1, 2, 3, 4, 5, 6, 7];
+var some = arr.some(function(item) {
+  return item % 2 === 0;
+});
+console.log(some);
 
 console.log("-");
-(function() {
-  /*
-    Envolva todo o código desse desafio em uma IIFE.
-    */
 
+/*
+    Envolva todo o código desse desafio em uma IIFE.
+*/
+(function() {
   /*
     Crie um array e mostre no console a representação em String desse array,
     usando o método visto na aula 13.
-    */
-  console.log("O array em formato de string é:");
-  // ?
+  */
+  var arrExam = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  console.log("O array em formato de string é:", arrExam.toString());
 
   /*
     Crie 2 arrays `sul` e `sudeste`, que serão as regiões do Brasil.
     Cada array deve conter os estados dessa região.
-    */
-  // ?
-
+  */
+  var arrSul = ["Paraná", "Santa Catarina", "Rio Grande do Sul"];
+  var arrSudeste = [
+    "São Paulo",
+    "Rio de Janeiro",
+    "Minas Gerais",
+    "Espirito Santo"
+  ];
   /*
     Crie uma variável chamada `brasil`, que irá receber as duas regiões
     concatenadas. Mostre o `brasil` no console.
-    */
-  console.log("\nAlguns Estados do Brasil:");
-  // ?
+  */
+  var brasil = arrSul.concat(arrSudeste);
+  console.log("\nAlguns Estados do Brasil:", brasil);
 
   /*
     Adicione 3 novos estados da região Norte no início do array e mostre no console.
     */
-  console.log("\nMais estados adicionados:");
+  brasil.unshift("Amazonas", "Acre", "Rondonia");
+  console.log("\nMais estados adicionados:", brasil);
   // ?
 
   /*
