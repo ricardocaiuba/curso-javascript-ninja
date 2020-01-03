@@ -84,8 +84,53 @@ var some = arr.some(function(item) {
 });
 console.log(some);
 
+console.log("----------------[  ARRAYS - map  ]-------------------");
+arr = [1, 2, 3, 4, 5, 6, 7];
+
+var map = arr.map(function(item) {
+  return item + 1;
+});
+console.log(map);
+var map = arr.map(function(item, index, array) {
+  return {
+    index: index,
+    item: item
+  };
+});
+console.log("map", map);
+var newArr = [];
+arr.forEach(function(item, index) {
+  newArr.push({ index: index, item: item });
+});
+console.log("newArr, ", newArr);
 console.log("-");
 
+console.log("----------------[  ARRAYS - filter  ]-------------------");
+arr = [1, 2, 3, 4, 5, 6, 7];
+
+var filter = arr.filter(function(item) {
+  return item > 2;
+});
+console.log("filter: ", filter);
+
+var map2 = arr.map(function(item) {
+  return item + 10;
+});
+
+var filter2 = map2.filter(function(item) {
+  return item > 13;
+});
+
+console.log("filter2: ", filter2);
+
+var map3 = arr
+  .map(function(item) {
+    return item + 10;
+  })
+  .filter(function(item) {
+    return item > 13;
+  });
+console.log("map3: ", map3);
 /*
     Envolva todo o código desse desafio em uma IIFE.
 */
