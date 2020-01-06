@@ -1,4 +1,53 @@
-(function() {
+console.log("----------------[  ARRAYS - reduce  ]-------------------");
+
+var arr = [1, 2, 3, 4, 5];
+console.log(arr);
+var reduce = arr.reduce(function (acumulado, atual, index, array) {
+  return acumulado + atual;
+}, 0);
+/*
+1ª - 0 + 1 = 1
+2ª - 1 + 2 = 3
+3ª - 3 + 3 = 6
+4ª - 6 + 4 = 10
+5ª - 10 + 5 = 15
+*/
+console.log("reduce (não modifica o array) ", reduce);
+
+var string = ["R", "I", "C", "A", "R", "D", "O"];
+var reduce2 = string.reduce(function (acumulado, atual, index, array) {
+  return acumulado + atual;
+});
+console.log("Com string ", reduce2);
+
+console.log("----------------[  ARRAYS - reduceRight  ]-------------------");
+var stringReduceRight = ["R", "I", "C", "A", "R", "D", "O"];
+var reduce3 = stringReduceRight.reduceRight(function (acumulado, atual, index, array) {
+  return acumulado + atual;
+});
+console.log("Com reduceRight: ", reduce3);
+
+console.log("----------------[  ARRAYS - indexOf  ]-------------------");
+var arrIndexOf = [1, 2, 3, 4, 5];
+console.log("Posição: ", arrIndexOf.indexOf(3));
+console.log("Posição: ", arrIndexOf.indexOf(33));
+
+var lastName = ["R", "O", "D", "R", "I", "G", "U", "E", "S"];
+console.log("Posição da letra no sobrenome: ", lastName.indexOf("R", 1));
+
+console.log("----------------[  ARRAYS - lastIndexOf  ]-------------------");
+lastName = ["R", "O", "D", "R", "I", "G", "U", "E", "S"];
+console.log("Posição da letra no sobrenome: ", lastName.lastIndexOf("R"));
+console.log("Posição da letra no sobrenome: ", lastName.lastIndexOf("R", 2));
+
+console.log("----------------[  ARRAYS - isArray  ]-------------------");
+lastName = ["R", "O", "D", "R", "I", "G", "U", "E", "S"];
+console.log("isArray: ", Array.isArray(lastName));
+console.log("isArray: ", Array.isArray("Ricardo"));
+console.log("isArray: ", Array.isArray({}));
+
+console.log("-----------------------------------");
+(function () {
   /*
 Envolva todo o código desse desafio em uma IIFE.
 */
