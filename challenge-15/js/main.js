@@ -1,6 +1,14 @@
-console.log("JS no browser! JS externo");
-
 (function() {
-  var name = "Local main1";
-  console.log("--> ", name);
+  console.log("--------------- [ this ] ---------------");
+  var myObject = {
+    myProperty: 1,
+    init: function init() {
+      return this.myProperty;
+    }
+  };
+  console.log(myObject);
+  console.log("init: ", myObject.init());
+
+  console.log("--------------- [ this em funções ] ---------------");
+  console.log(window);
 })();
