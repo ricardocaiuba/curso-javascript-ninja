@@ -1,11 +1,9 @@
-
 /*
 Envolva todo o código desse desafio em uma IIFE.
 Crie um arquivo chamado index.html e adicione esse script ao HTML.
 */
-(function () {
-
-    /*
+(function() {
+  /*
     Crie uma função construtora chamada "Person". Esse construtor deve ter
     as seguintes características:
     - Deve receber 3 parâmetros: `name`, `lastName` e `age`;
@@ -23,35 +21,73 @@ Crie um arquivo chamado index.html e adicione esse script ao HTML.
       adicionados à idade original (age). Esse método deverá retornar o objeto
       que será instanciado.
     */
-    // ?
+  console.log("----------------[  Exercício 1  ]-------------------");
+  function Person(name, lastName, age) {
+    this.name = name;
+    this.lastName = lastName;
+    this.age = age;
 
-    /*
+    this.getFullName = function getFullName() {
+      return `${this.name} ${this.lastName}`;
+    };
+
+    this.getAge = function getAge() {
+      return this.age;
+    };
+
+    this.addAge = function addAge() {
+      this.age += arguments[0];
+      return this;
+    };
+  }
+
+  // ?
+
+  /*
     Crie 3 novos objetos usando o construtor acima. Os objetos serão novas
     pessoas. As variáveis deverão ser o primeiro nome da pessoa. Passe os
     parâmetros corretamente para o construtor para criar as novas pessoas.
     Mostre as 3 novas pessoas criadas no console (Um console.log por pessoa).
     */
-    console.log('Novas pessoas criadas à partir de Person:');
-    // ?
-
-    /*
+  console.log("----------------[  Exercício 2  ]-------------------");
+  console.log("Novas pessoas criadas à partir de Person:");
+  var ricardo = new Person("Ricardo", "Rodrigues", 44);
+  var caroll = new Person("Carolline", "Lourenço", 35);
+  var canjica = new Person("Canjica", "Rodrigues", 6);
+  console.log(ricardo);
+  console.log(caroll);
+  console.log(canjica);
+  /*
     Mostre no console o nome completo de cada pessoa.
     */
-    console.log('\nNomes das pessoas:');
-    // ?
-
-    /*
+  console.log("----------------[  Exercício 3  ]-------------------");
+  console.log("\nNomes das pessoas:");
+  console.log(ricardo.getFullName());
+  console.log(caroll.getFullName());
+  console.log(canjica.getFullName());
+  /*
     Mostre no console as idades de cada pessoa, com a frase:
     - "[NOME COMPLETO] tem [IDADE] anos."
     */
-    console.log('\nIdade das pessoas:');
-    // ?
-
-    /*
+  console.log("----------------[  Exercício 4  ]-------------------");
+  console.log("\nIdade das pessoas:");
+  console.log(`${ricardo.getFullName()} tem ${ricardo.getAge()} anos.`);
+  console.log(`${caroll.getFullName()} tem ${caroll.age} anos.`);
+  console.log(`${canjica.getFullName()} tem ${canjica.age} anos.`);
+  /*
     Adicione alguns anos à cada pessoa, e mostre no console a nova idade de
     cada um. A frase deverá ser no formato:
     - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
     */
-    console.log('\nNova idade das pessoas:');
-    // ?
+  console.log("----------------[  Exercício 5  ]-------------------");
+  console.log("\nNova idade das pessoas:");
+  console.log(
+    `${ricardo.getFullName()} agora tem ${ricardo.addAge(2).getAge()} anos.`
+  );
+  console.log(`${caroll.getFullName()} tem ${caroll.addAge(4).getAge()} anos.`);
+  console.log(
+    `${canjica.getFullName()} tem ${canjica.addAge(-2).getAge()} anos.`
+  );
+
+  // ?
 })();
